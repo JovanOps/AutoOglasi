@@ -1,0 +1,41 @@
+﻿@model IEnumerable<AutoOglasi.Models.Automobil>
+
+@{
+    ViewData["Title"] = "Početna";
+}
+
+<h2>Početna – Oglasi</h2>
+
+<p>
+    <a class="btn btn-primary" asp-controller="Automobili" asp-action="Create">Dodaj automobil</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Marka</th>
+            <th>Model</th>
+            <th>Godište</th>
+            <th>Gorivo</th>
+            <th>Karoserija</th>
+            <th>Cena</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.Marka</td>
+                <td>@a.Model</td>
+                <td>@a.Godiste</td>
+                <td>@a.Gorivo</td>
+                <td>@a.Karoserija</td>
+                <td>@a.Cena.ToString("N2")</td>
+                <td>
+                    <a asp-controller="Automobili" asp-action="Details" asp-route-id="@a.Id">Detalji</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

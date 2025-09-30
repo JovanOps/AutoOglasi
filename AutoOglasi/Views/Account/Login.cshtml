@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Prijava";
+    var returnUrl = (string?)ViewData["ReturnUrl"] ?? Url.Action("Index", "Home");
+}
+
+<h2>Prijava (admin)</h2>
+
+<form asp-action="Login" method="post">
+    <input type="hidden" name="returnUrl" value="@returnUrl" />
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label class="form-label">Korisničko ime</label>
+        <input name="username" class="form-control" autocomplete="username" autofocus />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Lozinka</label>
+        <input name="password" type="password" class="form-control" autocomplete="current-password" />
+    </div>
+
+    <button class="btn btn-primary">Prijavi se</button>
+    <a class="btn btn-link" asp-controller="Home" asp-action="Index">Nazad</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

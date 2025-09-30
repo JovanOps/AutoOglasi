@@ -1,0 +1,58 @@
+﻿@model IEnumerable<AutoOglasi.Models.Automobil>
+
+@{
+    ViewData["Title"] = T["AppTitle"];
+}
+
+<h1>@T["AppTitle"]</h1>
+
+<p>
+    <a asp-action="Create">@T["CreateNew"]</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Marka)</th>
+            <th>@Html.DisplayNameFor(model => model.Model)</th>
+            <th>@Html.DisplayNameFor(model => model.Godiste)</th>
+            <th>@Html.DisplayNameFor(model => model.ZapreminaMotora)</th>
+            <th>@Html.DisplayNameFor(model => model.Snaga)</th>
+            <th>@Html.DisplayNameFor(model => model.Gorivo)</th>
+            <th>@Html.DisplayNameFor(model => model.Karoserija)</th>
+            <th>@Html.DisplayNameFor(model => model.Opis)</th>
+            <th>@Html.DisplayNameFor(model => model.Cena)</th>
+            <th>@Html.DisplayNameFor(model => model.Kontakt)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Marka)</td>
+                <td>@Html.DisplayFor(modelItem => item.Model)</td>
+                <td>@Html.DisplayFor(modelItem => item.Godiste)</td>
+                <td>@Html.DisplayFor(modelItem => item.ZapreminaMotora)</td>
+                <td>@Html.DisplayFor(modelItem => item.Snaga)</td>
+                <td>@Html.DisplayFor(modelItem => item.Gorivo)</td>
+                <td>@Html.DisplayFor(modelItem => item.Karoserija)</td>
+                <td>@Html.DisplayFor(modelItem => item.Opis)</td>
+                <td>@Html.DisplayFor(modelItem => item.Cena)</td>
+                <td>@Html.DisplayFor(modelItem => item.Kontakt)</td>
+                <td class="text-nowrap">
+                    <a asp-action="Edit" asp-route-id="@item.Id">@T["Edit"]</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">@T["Details"]</a>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        @: |
+                        <form asp-action="Delete" asp-route-id="@item.Id" method="post" class="d-inline">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-link p-0">@T["Delete"]</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
