@@ -45,6 +45,12 @@ The project demonstrates complete site functionality including user interaction,
 - `.gitignore` & `.gitattributes` – repository configuration  
 
 ---
+<img width="1920" height="897" alt="Screenshot (398)" src="https://github.com/user-attachments/assets/540fb0f0-6e9f-41b2-b436-66a6c645f36e" />
+<img width="1920" height="891" alt="Screenshot (399)" src="https://github.com/user-attachments/assets/e183d554-c862-4201-91e2-7736c4dd174a" />
+<img width="1920" height="912" alt="Screenshot (400)" src="https://github.com/user-attachments/assets/f1e563b2-9c1b-4875-a965-bd51b247da0d" />
+<img width="1920" height="910" alt="Screenshot (401)" src="https://github.com/user-attachments/assets/6f0f6e1f-b6e6-4d42-ba59-7677b5bcc67a" />
+
+
 
 ## 🚀 Getting Started
 
